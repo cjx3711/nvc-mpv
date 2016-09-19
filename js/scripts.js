@@ -3,21 +3,23 @@ var sweetApp = angular.module('SweetApp', ['ngRoute']);
 sweetApp.config( function($routeProvider) {
   $routeProvider
     .when("/", {
-        templateUrl : "templates/simple.html",
-        controller: "mainController"
+        templateUrl : "templates/home.html",
+        controller: "homeController"
     })
     .when("/about", {
-        templateUrl : "templates/simple.html",
+        templateUrl : "templates/about.html",
         controller: "aboutController"
+    })
+    .otherwise({
+        templateUrl : "templates/home.html",
+        controller: "homeController"
     });
 });
 
-sweetApp.controller('mainController', function ($scope) {
-  $scope.title = "Homepage";
-  $scope.message = "Welcome to the homepage of premium sweets (name pending)";
+sweetApp.controller('homeController', function ($scope) {
+
 });
 
 sweetApp.controller('aboutController', function ($scope) {
-  $scope.title = "About";
-  $scope.message = "We are a team passionate about stuff.";
+
 });
