@@ -14,6 +14,10 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/contact.html",
         controller: "contactController"
     })
+    .when("/login", {
+        templateUrl : "templates/login.html",
+        controller: "loginControler"
+    })
     .otherwise({
         templateUrl : "templates/home.html",
         controller: "homeController"
@@ -29,5 +33,9 @@ sweetApp.controller('aboutController', function ($scope) {
 });
 
 sweetApp.controller('contactController', function ($scope) {
+
+});
+
+sweetApp.controller('loginController', function ($scope) {
 
 });
