@@ -73,4 +73,6 @@ sweetApp.controller('bakeryController', ['$scope', '$route', 'dataService', func
     $scope.pageTitle = "Bakeries";
   }
 
+  $scope.stores = dataService.getStores();
+
 }]);

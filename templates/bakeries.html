@@ -8,3 +8,23 @@
     </div><!-- /row -->
     </div> <!-- /container -->
 </div><!-- /blue -->
+
+<div class="container mtb">
+  <div class="row centered">
+    <div class="store-container col-lg-3 col-md-3 col-sm-3" id="store-{{store.id}}" ng-repeat="store in stores">
+				<div class="he-wrap tpl6">
+				<img ng-src="{{ store.img }}" alt="">
+					<div class="he-view">
+						<div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Contact:</h3>
+                            <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>
+                            <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-twitter"></i></a>
+                    	</div><!-- he bg -->
+					</div><!-- he view -->
+				</div><!-- he wrap -->
+				<h4><a href="#/store/{{store.id}}">{{store.name}}</a></h4>
+				<h5 class="ctitle">{{store.location}}</h5>
+				<div class="hline"></div>
+		 	</div>
+  </div>
+</div>

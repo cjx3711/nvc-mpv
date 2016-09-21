@@ -47,10 +47,10 @@ sweetApp.service('dataService', function() {
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
   });
 
-  this.bakeries = [];
+  this.stores = [];
 
   for ( var i = 0; i < 10; i++ ) {
-    this.bakeries.push({
+    this.stores.push({
       id: i+1,
       name: "Sweet Bakery",
       img: "http://placehold.it/600x400",
@@ -85,11 +85,11 @@ sweetApp.service('dataService', function() {
     }
   }
 
-  this.getBakeries = function() {
-      return this.bakeries;
+  this.getStores = function() {
+      return this.stores;
   }
 
-  this.getProducts = function ( bakery_id ) {
+  this.getProducts = function ( store_id ) {
       // Generate products based on some random things.
       return this.products
   }
