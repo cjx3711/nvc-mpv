@@ -20,6 +20,14 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/blog.html",
         controller: "blogController"
     })
+    .when("/nearby", {
+        templateUrl : "templates/bakeries.html",
+        controller: "bakeryController"
+    })
+    .when("/bakeries", {
+        templateUrl : "templates/bakeries.html",
+        controller: "bakeryController"
+    })
     .when("/post/:id", {
         templateUrl : "templates/post.html",
         controller: "postController"
@@ -54,4 +62,15 @@ sweetApp.controller('postController', ['$scope', '$routeParams', 'dataService', 
   $scope.currentPostID = $routeParams.id;
   debugger;
   $scope.post = dataService.getPost($scope.currentPostID);
+}]);
+
+sweetApp.controller('bakeryController', ['$scope', '$route', 'dataService', function ($scope, $route, dataService) {
+  $scope.posts = dataService.getPosts();
+  var route = $route.current.$$route.originalPath;
+  if ( route == '/nearby' ) {
+    $scope.pageTitle = "Nearby Bakeries";
+  } else if ( route == "/bakeries" ) {
+    $scope.pageTitle = "Bakeries";
+  }
+
 }]);
