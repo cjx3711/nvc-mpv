@@ -1,0 +1,53 @@
+<div>
+  <h4>Search</h4>
+  <div class="hline"></div>
+    <p>
+      <br>
+      <input type="text" class="form-control" placeholder="Search something">
+    </p>
+    
+  <div class="spacing"></div>
+  
+  <h4>Categories</h4>
+  <div class="hline"></div>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Wordpress</a> <span class="badge badge-theme pull-right">9</span></p>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Photoshop</a> <span class="badge badge-theme pull-right">3</span></p>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Web Design</a> <span class="badge badge-theme pull-right">11</span></p>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Development</a> <span class="badge badge-theme pull-right">5</span></p>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Tips &amp; Tricks</a> <span class="badge badge-theme pull-right">7</span></p>
+    <p><a href="#"><i class="fa fa-angle-right"></i> Code Snippets</a> <span class="badge badge-theme pull-right">12</span></p>
+
+  <div class="spacing"></div>
+  
+  <h4>Recent Posts</h4>
+  <div class="hline"></div>
+    <ul class="popular-posts">
+              <li ng-repeat="post in posts track by post.id" id="recent-{{post.id}}">
+                  <a href="#/post/{{post.id}}"><img ng-src="{{post.img}}" alt="Popular Post"></a>
+                  <p><a href="#/post/{{post.id}}">{{post.content | limitTo : 120 }} ...</a></p>
+                  <em>Posted {{post.date}}</em>
+              </li>
+              
+          </ul>
+          
+  <div class="spacing"></div>
+  
+  <h4>Popular Tags</h4>
+  <div class="hline"></div>
+    <p>
+            <a class="btn btn-theme" href="#" role="button">Design</a>
+            <a class="btn btn-theme" href="#" role="button">Wordpress</a>
+            <a class="btn btn-theme" href="#" role="button">Flat</a>
+            <a class="btn btn-theme" href="#" role="button">Modern</a>
+            <a class="btn btn-theme" href="#" role="button">Wallpaper</a>
+            <a class="btn btn-theme" href="#" role="button">HTML5</a>
+            <a class="btn btn-theme" href="#" role="button">Pre-processor</a>
+            <a class="btn btn-theme" href="#" role="button">Developer</a>
+            <a class="btn btn-theme" href="#" role="button">Windows</a>
+            <a class="btn btn-theme" href="#" role="button">Phothosop</a>
+            <a class="btn btn-theme" href="#" role="button">UX</a>
+            <a class="btn btn-theme" href="#" role="button">Interface</a>		            	
+            <a class="btn btn-theme" href="#" role="button">UI</a>		            	
+            <a class="btn btn-theme" href="#" role="button">Blog</a>		            	
+    </p>
+</div>
