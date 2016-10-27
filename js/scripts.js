@@ -36,6 +36,10 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/preferences.html",
         controller: "preferencesController"
     })
+    .when("/admin/scan", {
+        templateUrl : "templates/scan.html",
+        controller: "scanController"
+    })
     .when("/post/:id", {
         templateUrl : "templates/post.html",
         controller: "postController"
