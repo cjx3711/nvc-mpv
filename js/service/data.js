@@ -1,22 +1,38 @@
 sweetApp.service('dataService', function() {
+  window.DataService = this;
+  this.save = function() {
+    // Store
+    localStorage.setItem("user", this.user);
+    console.log("Saving data", this.user)
+  }
+  this.load = function() {
+    this.user = localStorage.getItem("user");
+    console.log("Loading data", this.user);
+
+  }
+
   this.user = null;
 
   this.login = function(username, password) {
     console.log("Logging in with", username, password);
-    if ( username && username.toLowerCase() == "user"
+    if ( username && username.toLowerCase() == "user@gmail.com"
          && password && password == "12345" ) {
       this.user = {
         name: "Member",
         type: "consumer"
       }
+      return true;
     }
-    if ( username && username.toLowerCase() == "store"
+    if ( username && username.toLowerCase() == "admin@store.com"
          && password && password == "12345" ) {
       this.user = {
         name: "Super Bakery",
         type: "store"
       }
+      return true;
     }
+    this.save();
+    return false;
   }
 
   this.logout = function() {

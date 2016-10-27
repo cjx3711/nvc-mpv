@@ -28,6 +28,14 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/bakeries.html",
         controller: "bakeryController"
     })
+    .when("/admin", {
+        templateUrl : "templates/admin.html",
+        controller: "adminController"
+    })
+    .when("/preferences", {
+        templateUrl : "templates/preferences.html",
+        controller: "preferencesController"
+    })
     .when("/post/:id", {
         templateUrl : "templates/post.html",
         controller: "postController"
