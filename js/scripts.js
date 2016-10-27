@@ -14,7 +14,7 @@ sweetApp.config( function($routeProvider) {
     })
     .when("/login", {
         templateUrl : "templates/login.html",
-        controller: "loginControler"
+        controller: "loginController"
     })
     .when("/blog", {
         templateUrl : "templates/blog.html",
@@ -37,42 +37,3 @@ sweetApp.config( function($routeProvider) {
         controller: "homeController"
     });
 });
-
-sweetApp.controller('homeController', function ($scope) {
-
-});
-
-sweetApp.controller('aboutController', function ($scope) {
-
-});
-
-sweetApp.controller('contactController', function ($scope) {
-
-});
-
-sweetApp.controller('loginController', function ($scope) {
-
-});
-
-sweetApp.controller('blogController', ['$scope', 'dataService', function ($scope, dataService) {
-  $scope.posts = dataService.getPosts();
-}]);
-
-sweetApp.controller('postController', ['$scope', '$routeParams', 'dataService', function ($scope, $routeParams, dataService) {
-  $scope.currentPostID = $routeParams.id;
-  debugger;
-  $scope.post = dataService.getPost($scope.currentPostID);
-}]);
-
-sweetApp.controller('bakeryController', ['$scope', '$route', 'dataService', function ($scope, $route, dataService) {
-  $scope.posts = dataService.getPosts();
-  var route = $route.current.$$route.originalPath;
-  if ( route == '/nearby' ) {
-    $scope.pageTitle = "Nearby Bakeries";
-  } else if ( route == "/bakeries" ) {
-    $scope.pageTitle = "Bakeries";
-  }
-
-  $scope.stores = dataService.getStores();
-
-}]);

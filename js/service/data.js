@@ -1,4 +1,30 @@
 sweetApp.service('dataService', function() {
+  this.user = null;
+
+  this.login = function(username, password) {
+    console.log("Logging in with", username, password);
+    if ( username && username.toLowerCase() == "user"
+         && password && password == "12345" ) {
+      this.user = {
+        name: "Member",
+        type: "consumer"
+      }
+    }
+    if ( username && username.toLowerCase() == "store"
+         && password && password == "12345" ) {
+      this.user = {
+        name: "Super Bakery",
+        type: "store"
+      }
+    }
+  }
+
+  this.logout = function() {
+    if ( this.user ) {
+      this.user = null;
+    }
+  }
+
   // Generate post data
   this.posts = [];
 
