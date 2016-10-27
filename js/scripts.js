@@ -40,6 +40,10 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/post.html",
         controller: "postController"
     })
+    .when("/voucher/:id", {
+        templateUrl : "templates/voucher.html",
+        controller: "voucherController"
+    })
     .otherwise({
         templateUrl : "templates/home.html",
         controller: "homeController"
