@@ -50,6 +50,11 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/customer-statistics.html",
         controller: "customerStatisticsController"
     })
+    .when("/customer/post", {
+        templateUrl : "templates/customer-post.html",
+        controller: "customerPostController"
+    })
+
     // Bakery Pages
     .when("/bakery/admin", {
         templateUrl : "templates/bakery-admin.html",
