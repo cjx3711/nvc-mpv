@@ -5,6 +5,14 @@
   img.captured-image {
     width:100%;
   }
+
+  .fa-check {
+    display:none;
+    padding-top: 5px;
+  }
+  .active .fa-check {
+    display: inline-block;
+  }
 </style>
 
 
@@ -49,31 +57,31 @@
           </div>
 
           <a class="btn btn-block btn-social btn-twitter">
-            <span class="fa fa-twitter"></span> Post to twitter
+            <span class="fa fa-twitter"></span> Post to twitter <span class="fa fa-check pull-right"></span>
           </a>
 
           <a class="btn btn-block btn-social btn-pinterest">
-            <span class="fa fa-pinterest"></span> Post to pinterest
+            <span class="fa fa-pinterest"></span> Post to pinterest <span class="fa fa-check pull-right"></span>
           </a>
 
           <a class="btn btn-block btn-social btn-tumblr">
-            <span class="fa fa-tumblr"></span> Post to tumblr
+            <span class="fa fa-tumblr"></span> Post to tumblr <span class="fa fa-check pull-right"></span>
           </a>
 
           <a class="btn btn-block btn-social btn-facebook">
-            <span class="fa fa-facebook"></span> Post to facebook
+            <span class="fa fa-facebook"></span> Post to facebook <span class="fa fa-check pull-right"></span>
           </a>
 
           <a class="btn btn-block btn-social btn-google">
-            <span class="fa fa-google"></span> Post to google+
+            <span class="fa fa-google"></span> Post to google+ <span class="fa fa-check pull-right"></span>
           </a>
 
           <a class="btn btn-block btn-social btn-flickr">
-            <span class="fa fa-flickr"></span> Post to flickr
+            <span class="fa fa-flickr"></span> Post to flickr <span class="fa fa-check pull-right"></span>
           </a>
 
-          <a class="btn btn-block btn-social btn-flickr">
-            <span class="fa fa-flickr"></span> Post to flickr
+          <a class="btn btn-block btn-social btn-instagram">
+            <span class="fa fa-instagram"></span> Post to instagram <span class="fa fa-check pull-right"></span>
           </a>
 
           <button type="submit" class="btn btn-theme form-control" ng-click="post()">Post</button>

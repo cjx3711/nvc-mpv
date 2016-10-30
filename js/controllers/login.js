@@ -9,7 +9,7 @@ sweetApp.controller('loginController', ['$scope', '$location', 'dataService', fu
     }
   }
 
-  if ( $location.path() == '/login/member' ) {
+  if ( $location.path() == '/login/customer' ) {
     var result = DataService.login('user@gmail.com', '12345');
     if ( result ) {
       $location.path('/')

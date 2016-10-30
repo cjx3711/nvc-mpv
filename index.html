@@ -55,7 +55,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown">LOGIN / REGISTER <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#/login">LOGIN / REGISTER</a></li>
-                <li><a href="#/login/member">LOGIN MEMBER</a></li>
+                <li><a href="#/login/customer">LOGIN CUSTOMER</a></li>
                 <li><a href="#/login/bakery">LOGIN BAKERY</a></li>
               </ul>
             </li>
@@ -64,8 +64,9 @@
               ng-if="DataService().user && DataService().user.type == 'consumer'">
               <a class="dropdown-toggle" data-toggle="dropdown">Welcome {{ DataService().user.name }}<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#/member/preferemces">ADMIN PANEL</a></li>
-                <li><a href="#/member/statistics">STATISTICS</a></li>
+                <li><a href="#/customer/post">POST</a></li>
+                <li><a href="#/customer/preferences">ADMIN PANEL</a></li>
+                <li><a href="#/customer/statistics">STATISTICS</a></li>
                 <li><a href="#/" ng-click="logout()">LOGOUT</a></li>
               </ul>
             </li>
