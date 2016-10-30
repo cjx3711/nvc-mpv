@@ -14,7 +14,6 @@ sweetApp.service('dataService', function() {
   this.user = null;
 
   this.login = function(username, password) {
-    console.log("Logging in with", username, password);
     if ( username && username.toLowerCase() == "user@gmail.com"
          && password && password == "12345" ) {
       this.user = {
@@ -36,7 +35,6 @@ sweetApp.service('dataService', function() {
   }
 
   this.logout = function() {
-    console.log("Logging out");
     if ( this.user ) {
       this.user = null;
     }

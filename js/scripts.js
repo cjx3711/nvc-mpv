@@ -31,6 +31,14 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/login.html",
         controller: "loginController"
     })
+    .when("/login/member", {
+        templateUrl : "templates/login.html",
+        controller: "loginController"
+    })
+    .when("/login/bakery", {
+        templateUrl : "templates/login.html",
+        controller: "loginController"
+    })
     // Member Pages
 
 
