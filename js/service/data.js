@@ -136,4 +136,13 @@ sweetApp.service('dataService', function() {
       // Generate products based on some random things.
       return this.products
   }
+
+
+  this.vouchers = [
+    {
+      id: 1,
+      discount: 0.2,
+
+    }
+  ]
 });
