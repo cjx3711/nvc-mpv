@@ -36,6 +36,7 @@ sweetApp.service('dataService', function() {
   }
 
   this.logout = function() {
+    console.log("Logging out");
     if ( this.user ) {
       this.user = null;
     }

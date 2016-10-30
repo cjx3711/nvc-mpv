@@ -12,38 +12,51 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/contact.html",
         controller: "contactController"
     })
-    .when("/login", {
-        templateUrl : "templates/login.html",
-        controller: "loginController"
-    })
+    // Pages
     .when("/blog", {
         templateUrl : "templates/blog.html",
         controller: "blogController"
-    })
-    .when("/nearby", {
-        templateUrl : "templates/bakeries.html",
-        controller: "bakeryController"
-    })
-    .when("/bakeries", {
-        templateUrl : "templates/bakeries.html",
-        controller: "bakeryController"
-    })
-    .when("/admin", {
-        templateUrl : "templates/admin.html",
-        controller: "adminController"
-    })
-    .when("/preferences", {
-        templateUrl : "templates/preferences.html",
-        controller: "preferencesController"
-    })
-    .when("/admin/scan", {
-        templateUrl : "templates/scan.html",
-        controller: "scanController"
     })
     .when("/post/:id", {
         templateUrl : "templates/post.html",
         controller: "postController"
     })
+
+    .when("/bakeries", {
+        templateUrl : "templates/bakeries.html",
+        controller: "bakeryController"
+    })
+
+    .when("/login", {
+        templateUrl : "templates/login.html",
+        controller: "loginController"
+    })
+    // Member Pages
+
+
+    .when("/customer/preferences", {
+        templateUrl : "templates/customer-preferences.html",
+        controller: "customerPreferencesController"
+    })
+    .when("/customer/statistics", {
+        templateUrl : "templates/customer-statistics.html",
+        controller: "customerStatisticsController"
+    })
+    // Bakery Pages
+    .when("/bakery/admin", {
+        templateUrl : "templates/bakery-admin.html",
+        controller: "bakeryAdminController"
+    })
+    .when("/bakery/scan", {
+        templateUrl : "templates/bakery-scan.html",
+        controller: "bakeryScanController"
+    })
+    .when("/bakery/statistics", {
+        templateUrl : "templates/bakery-statistics.html",
+        controller: "bakeryStatisticsController"
+    })
+
+
     .when("/voucher/:id", {
         templateUrl : "templates/voucher.html",
         controller: "voucherController"
