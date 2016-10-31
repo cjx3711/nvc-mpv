@@ -1,0 +1,74 @@
+<!-- *****************************************************************************************************************
+ BLUE WRAP
+ ***************************************************************************************************************** -->
+<div id="blue">
+    <div class="container">
+    <div class="row">
+      <h3>{{pageTitle}}</h3>
+    </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+
+<!-- *****************************************************************************************************************
+	 BLOG CONTENT
+	 ***************************************************************************************************************** -->
+<div class="container mtb">
+
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h4>Overall stats</h4>
+      <div id="overall" class="chart" style="height:300px"></div>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+      <h4>Voucher breakdown</h4>
+      <div id="voucher" class="chart" style="height:300px"></div>
+    </div>
+  </div>
+
+ 	<div class="row">
+    <section class="promotions">
+        <header>
+            <h4>
+                Promotions
+                <small>
+                    In the past day
+                </small>
+            </h4>
+        </header>
+          <table class="table table-striped table-lg">
+              <thead>
+              <tr>
+                  <th class="source-col-header">Status</th>
+                  <th>Name</th>
+                  <th>Sales</th>
+                  <th>Change</th>
+                  <th>Days</th>
+                  <th class="chart-col-header hidden-xs">Trend</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="promotion in promotionData">
+                    <td><span class="label" ng-class="{'label-success':promotion.fakeData.status=='active', 'label-warning':promotion.fakeData.status=='expiring', 'label-default':promotion.fakeData.status=='inactive'}">{{ promotion.fakeData.status}}</span></td>
+                    <td> {{ promotion.name }} </td>
+                    <td> {{ promotion.fakeData.totalSales }} </td>
+                    <td> {{ promotion.fakeData.change }}
+                      <span ng-if="promotion.fakeData.change > 0" class="fa fa-chevron-up text-success"></span>
+                      <span ng-if="promotion.fakeData.change < 0"class="fa fa-chevron-down text-danger"></span>
+                    </td>
+                    <td>
+                      <span class="text-success">{{ promotion.fakeData.daysActive }} <span class="fa fa-calendar-check-o"></span></span>
+                      <span class="text-warning">{{ promotion.fakeData.daysLeft }} <span class="fa fa-calendar-times-o"></span></span>
+                    </td>
+                    <td class="chart-cell hidden-xs">
+                        <div id="chart-{{promotion.id}}" style="width:100%"></div>
+                    </td>
+                </tr>
+              </tbody>
+          </table>
+    </section>
+  </div>
+
+
+</div>

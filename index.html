@@ -75,9 +75,8 @@
                 ng-if="DataService().user && DataService().user.type == 'store'">
               <a class="dropdown-toggle" data-toggle="dropdown">{{ DataService().user.name }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#/bakery/admin">ADMIN PANEL</a></li>
-                <li><a href="#/bakery/statistics">STATISTICS</a></li>
-                <li><a href="#/bakery/products">PRODUCTS</a></li>
+                <li><a href="#/bakery/promotions">ADMIN PANEL</a></li>
+                <li><a href="#/bakery/scan">SCAN</a></li>
                 <li><a href="#/" ng-click="logout()">LOGOUT</a></li>
               </ul>
             </li>
@@ -161,6 +160,7 @@
     <script src="js/controllers/bakery-scan.js"></script>
     <script src="js/controllers/bakery-admin.js"></script>
     <script src="js/controllers/bakery-statistics.js"></script>
+    <script src="js/controllers/bakery-promotions.js"></script>
 
     <script src="js/controllers/customer-preferences.js"></script>
     <script src="js/controllers/customer-post.js"></script>

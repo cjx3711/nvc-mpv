@@ -68,6 +68,10 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/bakery-statistics.html",
         controller: "bakeryStatisticsController"
     })
+    .when("/bakery/promotions", {
+        templateUrl : "templates/bakery-promotions.html",
+        controller: "bakeryPromotionsController"
+    })
 
 
     .when("/voucher/:id", {
