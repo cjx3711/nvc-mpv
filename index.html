@@ -136,8 +136,21 @@
     <script src="lib/js/jquery.hoverex.min.js"></script>
     <script src="lib/js/jquery.prettyPhoto.js"></script>
     <script src="lib/js/jquery.isotope.min.js"></script>
+    <script src="js/database/posts.js"></script>
+    <script src="js/database/promotions.js"></script>
+    <script src="js/database/products.js"></script>
+    <script src="js/database/stores.js"></script>
 
     <script>
+      Storage.prototype.setObject = function(key, value) {
+          this.setItem(key, JSON.stringify(value));
+      }
+
+      Storage.prototype.getObject = function(key) {
+          var value = this.getItem(key);
+          return value && JSON.parse(value);
+      }
+
       var sweetApp = angular.module('SweetApp', ['ngRoute']);
     </script>
 

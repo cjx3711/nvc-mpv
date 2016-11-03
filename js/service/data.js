@@ -2,11 +2,11 @@ sweetApp.service('dataService', function() {
   window.DataService = this;
   this.save = function() {
     // Store
-    localStorage.setItem("user", JSON.stringify(this.user));
+    localStorage.setObject("user", this.user);
     console.log("Saving data", this.user)
   }
   this.load = function() {
-    this.user = JSON.parse(localStorage.getItem("user"));
+    this.user = localStorage.getObject("user");
     console.log("Loading data", this.user);
   }
 
@@ -43,74 +43,9 @@ sweetApp.service('dataService', function() {
   }
 
   // Generate post data
-  this.posts = [];
-
-  this.posts.push({
-    id: 1,
-    title: "Baked goods are awesome",
-    date: "24th Aug 2015",
-    author: "Jessie",
-    img: "http://placehold.it/1024x400",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-  });
-
-  this.posts.push({
-    id: 2,
-    title: "Baked goods are cool",
-    date: "21th Aug 2015",
-    author: "Jessie",
-    img: "http://placehold.it/1024x400",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-  });
-
-  this.posts.push({
-    id: 3,
-    title: "Pastries awesome",
-    date: "14th Aug 2015",
-    author: "Jessie",
-    img: "http://placehold.it/1024x400",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-  });
-
-  this.posts.push({
-    id: 4,
-    title: "We are going live",
-    date: "5th Aug 2015",
-    author: "Jessie",
-    img: "http://placehold.it/1024x400",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-  });
-
-  this.posts.push({
-    id: 5,
-    title: "Hello World",
-    date: "29th Jun 2015",
-    author: "Jessie",
-    img: "http://placehold.it/1024x400",
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-  });
-
-  this.stores = [];
-
-  for ( var i = 0; i < 10; i++ ) {
-    this.stores.push({
-      id: i+1,
-      name: "Sweet Bakery",
-      img: "http://placehold.it/600x400",
-      location: "123 Some Street"
-    });
-  }
-
-  this.products = [];
-
-  for ( var i = 0 ; i < 6; i++ ) {
-    this.products.push({
-      id: i+1,
-      name: "Cupcake",
-      img: "http://placehold.it/400x400",
-      discount: "20%"
-    })
-  }
+  this.posts = generatePostData();
+  this.stores = generateStoreData();;
+  this.products = generateProductData();
 
 
   this.getPosts = function() {
@@ -138,58 +73,5 @@ sweetApp.service('dataService', function() {
   }
 
 
-  this.promotionData = [
-    {
-      id: 1,
-      discount: 0.2,
-      name: 'Autumn year sale',
-      fakeData: {
-        status: 'inactive',
-        totalSales: 243,
-        daysLeft: 0,
-        daysActive: 15,
-        change: 0,
-        trend: [0, 0, 0, 0, 0, 0 ]
-      }
-    },
-    {
-      id: 2,
-      discount: 0.2,
-      name: 'End year sale',
-      fakeData: {
-        status: 'inactive',
-        totalSales: 50,
-        daysLeft: 5,
-        daysActive: 8,
-        change: 6,
-        trend: [16, 12, 3, 0, 0, 0 ]
-      }
-    },
-    {
-      id: 3,
-      discount: 0.2,
-      name: 'New Year sale',
-      fakeData: {
-        status: 'expiring',
-        totalSales: 50,
-        daysLeft: 5,
-        daysActive: 8,
-        change: 6,
-        trend: [25, 33, 38, 42, 46, 41 ]
-      }
-    },
-    {
-      id: 4,
-      discount: 0.2,
-      name: 'Spring sale',
-      fakeData: {
-        status: 'active',
-        totalSales: 50,
-        daysLeft: 5,
-        daysActive: 8,
-        change: 6,
-        trend: [0, 0, 15, 26, 10, 5 ]
-      }
-    }
-  ]
+  this.promotionData = generatePromotionData();
 });
