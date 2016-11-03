@@ -2,16 +2,16 @@ sweetApp.service('dataService', function() {
   window.DataService = this;
   this.save = function() {
     // Store
-    localStorage.setItem("user", this.user);
+    localStorage.setItem("user", JSON.stringify(this.user));
     console.log("Saving data", this.user)
   }
   this.load = function() {
-    this.user = localStorage.getItem("user");
+    this.user = JSON.parse(localStorage.getItem("user"));
     console.log("Loading data", this.user);
-
   }
 
   this.user = null;
+  this.load();
 
   this.login = function(username, password) {
     if ( username && username.toLowerCase() == "user@gmail.com"
@@ -20,6 +20,7 @@ sweetApp.service('dataService', function() {
         name: "Member",
         type: "consumer"
       }
+      this.save();
       return true;
     }
     if ( username && username.toLowerCase() == "admin@store.com"
@@ -28,9 +29,9 @@ sweetApp.service('dataService', function() {
         name: "Super Bakery",
         type: "store"
       }
+      this.save();
       return true;
     }
-    this.save();
     return false;
   }
 
@@ -38,6 +39,7 @@ sweetApp.service('dataService', function() {
     if ( this.user ) {
       this.user = null;
     }
+    this.save();
   }
 
   // Generate post data
