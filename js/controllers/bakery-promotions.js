@@ -2,15 +2,15 @@
 sweetApp.controller('bakeryPromotionsController', ['$scope', '$location' ,'dataService', function ($scope, $location, DataService) {
   $scope.pageTitle = "Promotions";
 
-  $scope.promotionData = DataService.promotionData;
+  $scope.promotions = DataService.promotions;
 
 
 
   var labels = ['Jan 16', 'Feb 16', 'Mar 16', 'Apr 16', 'May 16', 'Jun 16'];
   var voucherSales = [
-    $scope.promotionData[1].fakeData.trend,
-    $scope.promotionData[2].fakeData.trend,
-    $scope.promotionData[3].fakeData.trend
+    $scope.promotions[1].fakeData.trend,
+    $scope.promotions[2].fakeData.trend,
+    $scope.promotions[3].fakeData.trend
   ];
 
   var voucherTotals = [];
@@ -44,7 +44,7 @@ sweetApp.controller('bakeryPromotionsController', ['$scope', '$location' ,'dataS
 
 
   var pieData = {
-    labels: [ $scope.promotionData[1].name, $scope.promotionData[2].name, $scope.promotionData[2].name],
+    labels: [ $scope.promotions[1].name, $scope.promotions[2].name, $scope.promotions[2].name],
     series: voucherTotals
   };
   var pieOptions = {
@@ -70,8 +70,8 @@ sweetApp.controller('bakeryPromotionsController', ['$scope', '$location' ,'dataS
   new Chartist.Pie('#voucher', pieData, pieOptions, responsiveOptions);
 
   _.delay( function() {
-    for ( var i = 0; i < $scope.promotionData.length; i++ ) {
-      var promotion = $scope.promotionData[i];
+    for ( var i = 0; i < $scope.promotions.length; i++ ) {
+      var promotion = $scope.promotions[i];
       var data = promotion.fakeData.trend;
       new Chartist.Line('#chart-' + promotion.id, {
         series: [

@@ -42,10 +42,11 @@ sweetApp.service('dataService', function() {
     this.save();
   }
 
-  // Generate post data
+  // Init "database"
   this.posts = generatePostData();
   this.stores = generateStoreData();;
   this.products = generateProductData();
+  this.promotions = generatePromotionData();
 
 
   this.getPosts = function() {
@@ -73,5 +74,5 @@ sweetApp.service('dataService', function() {
   }
 
 
-  this.promotionData = generatePromotionData();
+
 });

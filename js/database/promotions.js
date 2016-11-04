@@ -53,5 +53,4 @@ function generatePromotionData() {
   }];
 
   return promotions;
-
 }

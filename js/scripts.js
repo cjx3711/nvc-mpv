@@ -74,6 +74,10 @@ sweetApp.config( function($routeProvider) {
     })
 
 
+    .when("/redeem/:id", {
+        templateUrl : "templates/redeem.html",
+        controller: "redeemController"
+    })
     .when("/voucher/:id", {
         templateUrl : "templates/voucher.html",
         controller: "voucherController"

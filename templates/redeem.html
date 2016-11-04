@@ -1,0 +1,109 @@
+<!-- *****************************************************************************************************************
+ BLUE WRAP
+ ***************************************************************************************************************** -->
+<div id="blue">
+  <div class="container">
+  <div class="row">
+    <h3>{{pageTitle}}</h3>
+  </div><!-- /row -->
+  </div> <!-- /container -->
+</div><!-- /blue -->
+
+
+<div class="container mt">
+ 	<div class="row">
+	 	<div class="centered">
+			<h1>Score! Your friend {{friend.name}} gave you a voucher for {{ bakery.name }}</h1>
+      <p ng-if="!revealed">
+        Click on one of the cards below to reveal your voucher!
+      </p>
+	 	</div>
+ 	</div><!-- --/row ---->
+
+  <div class="row" ng-if="revealed">
+    <h2>Awesome, you got {{selectedCard.discount}}% off your next purchase at {{ bakery.name }} </h2>
+
+    <p>
+      How do I redeem this awesome reward?
+    </p>
+    <p>
+        Option 1: Visit this link when you're at the bakery.<br/>
+        <a href="#">www.stealfresh.ly/voucher/12125125</a>
+    </p>
+    <p>
+      Option 2: We'll send you an email<br/>
+      <form class="form-inline">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" placeholder="email">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button">Email me!</button>
+          </span>
+        </div>
+      </form>
+    </p>
+    <p>
+        Option 3: Download our app to save all your discounts <br/>
+        <a href="#">Android</a> <a href="#">iPhone</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 game-card-container" ng-repeat="card in game.cards track by $index">
+      <div class="game-card-panel" ng-class="{selected: card.selected}" ng-click="selectCard(card)">
+        <span class="card-icon" ng-if="!revealed">
+          <i class="fa fa-trophy" aria-hidden="true"></i>
+        </span>
+        <span class="card-number" ng-if="revealed">
+          {{ card.discount }} %
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12" ng-if="!revealed">
+      <button class="btn btn-success money-button" ng-disabled="!cardSelected" ng-click="getVoucher()">Show me the money!</button>
+    </div>
+  </div>
+
+
+</div>
+
+<div style="height: 200px;">
+</div>
+
+
+<style>
+  .game-card-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .game-card-panel {
+    background: #EFEEED;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-transition: linear background 200ms; /* Safari */
+    transition: linear background 200ms;
+  }
+  .game-card-panel:hover {
+    background: #DEEDEE;
+  }
+
+  .game-card-panel.selected {
+    border: 3px solid #ABBABB;
+  }
+
+  .game-card-panel .card-number {
+    font-size: 2.5em;
+  }
+  .game-card-panel .card-icon {
+    font-size: 4em;
+  }
+  .money-button {
+    width:100%;
+    font-size: 2em;
+    padding:15px;
+    height:auto;
+  }
+</style>
