@@ -28,7 +28,7 @@ sweetApp.controller('redeemController', ['$scope', '$location' ,'dataService', f
       card.selected = false;
     });
     card.selected = true;
-    $selectedCard = card;
+    $scope.selectedCard = card;
   }
   $scope.revealed = false;
   $scope.getVoucher = function() {

@@ -21,17 +21,19 @@
  	</div><!-- --/row ---->
 
   <div class="row" ng-if="revealed">
-    <h2>Awesome, you got {{selectedCard.discount}}% off your next purchase at {{ bakery.name }} </h2>
+    <h2 class="congrats-text">Awesome, you got <span class="percent">{{ selectedCard.discount }}%</span> off your next purchase at {{ bakery.name }} </h2>
 
     <p>
       How do I redeem this awesome reward?
     </p>
-    <p>
-        Option 1: Visit this link when you're at the bakery.<br/>
-        <a href="#">www.stealfresh.ly/voucher/12125125</a>
-    </p>
-    <p>
-      Option 2: We'll send you an email<br/>
+    <div class="col-md-4 col-xs-12 well redemption-options">
+      <h4>Option 1</h4>
+      Visit this link when you're at the bakery.<br/>
+      <a href="#">www.stealfresh.ly/voucher/12125125</a>
+    </div>
+    <div class="col-md-4 col-xs-12 well redemption-options">
+      <h4>Option 2</h4>
+      We'll send you an email<br/>
       <form class="form-inline">
         <div class="input-group">
           <span class="input-group-addon">@</span>
@@ -41,14 +43,15 @@
           </span>
         </div>
       </form>
-    </p>
-    <p>
-        Option 3: Download our app to save all your discounts <br/>
-        <a href="#">Android</a> <a href="#">iPhone</a>
-    </p>
+    </div>
+    <div class="col-md-4 col-xs-12 well redemption-options">
+      <h4>Option 3</h4>
+      Download our app to save all your discounts <br/>
+      <a href="#">Android</a> <a href="#">iPhone</a>
+    </div>
   </div>
 
-  <div class="row">
+  <div class="row cards" ng-class="{ revealed: revealed, obscured: !revealed }">
     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 game-card-container" ng-repeat="card in game.cards track by $index">
       <div class="game-card-panel" ng-class="{selected: card.selected}" ng-click="selectCard(card)">
         <span class="card-icon" ng-if="!revealed">
@@ -72,10 +75,17 @@
 
 
 <style>
+  .cards.revealed .game-card-panel {
+    opacity: 0.6;
+  }
+  .cards.revealed .game-card-panel.selected {
+    opacity: 1;
+  }
   .game-card-container {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
   .game-card-panel {
     background: #EFEEED;
     height: 150px;
@@ -86,7 +96,7 @@
     -webkit-transition: linear background 200ms; /* Safari */
     transition: linear background 200ms;
   }
-  .game-card-panel:hover {
+  .cards.obscured .game-card-panel:hover {
     background: #DEEDEE;
   }
 
@@ -106,4 +116,15 @@
     padding:15px;
     height:auto;
   }
+  .congrats-text {
+
+  }
+  .congrats-text .percent {
+    font-size:
+  }
+
+  .redemption-options {
+    height:150px;
+  }
+
 </style>
