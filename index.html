@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="lib/css/style.css">
     <link rel="stylesheet" href="lib/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/css/chartist.css">
@@ -26,7 +27,7 @@
 
   <body ng-app="SweetApp">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top primary-color" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -129,6 +130,10 @@
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
     <script src="lib/js/retina-1.1.0.js"></script>
     <script src="lib/js/chartist.js"></script>
     <script src="lib/js/lodash.js"></script>
@@ -151,7 +156,12 @@
           return value && JSON.parse(value);
       }
 
-      var sweetApp = angular.module('SweetApp', ['ngRoute']);
+      var sweetApp = angular.module('SweetApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
+      sweetApp.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+          .primaryPalette('red')
+          .accentPalette('teal');
+      });
     </script>
 
     <script src="js/custom.js"></script>

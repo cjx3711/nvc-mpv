@@ -60,11 +60,12 @@ a {
 	-o-transition: background-color .4s linear, color .4s linear;
 	-ms-transition: background-color .4s linear, color .4s linear;
 	transition: background-color .4s linear, color .4s linear;
+	color: #009688;
 }
 a:hover,
 a:focus {
-  text-decoration: none;
-  color:#01b2fe;
+  text-decoration: underline;
+  color: #009688;
 }
 
 ::-moz-selection  {
@@ -101,17 +102,18 @@ a:focus {
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: white;
+  color: #fff;
 	font-weight: 700;
 	font-size: 12px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-	color: #00b3fe;
+  color: #fff;
+	background-color: #D32F2F;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #00b3fe;
+  color: #fff;
 	background-color: transparent;
 }
 
@@ -121,7 +123,7 @@ a:focus {
 }
 
 .dropdown-menu {
-	background: #384452;
+	background: #D32F2F;
 }
 
 .dropdown-menu > li > a {
@@ -142,8 +144,8 @@ a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff;
-  background-color: #00b3fe;
-  border-color: #00b3fe;
+  background-color: #D32F2F;
+  border-color: #D32F2F;
 }
 
 .dmbutton:hover,
@@ -362,15 +364,14 @@ a:focus {
 ################################################################# */
 /* General Tweaks */
 
-#blue {
-	background: #00b3fe;
+#title {
 	margin-top: 60px;
 	margin-bottom: 60px;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
-#blue h3 {
+#title h3 {
 	color: white;
 	margin-left: 15px;
 }

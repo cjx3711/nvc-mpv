@@ -1,7 +1,7 @@
 <!-- *****************************************************************************************************************
  BLUE WRAP
  ***************************************************************************************************************** -->
-<div id="blue">
+<div id="title" class="default-primary-color">
   <div class="container">
   <div class="row">
     <h3>{{pageTitle}}</h3>
@@ -11,49 +11,84 @@
 
 
 <div class="container mt">
- 	<div class="row">
-	 	<div class="centered">
-			<h1>Score! Your friend {{friend.name}} gave you a voucher for {{ bakery.name }}</h1>
-      <p ng-if="!revealed">
-        Click on one of the cards below to reveal your voucher!
-      </p>
-	 	</div>
- 	</div><!-- --/row ---->
-
   <div class="row" ng-if="revealed">
-    <h2 class="congrats-text">Awesome, you got <span class="percent">{{ selectedCard.discount }}%</span> off your next purchase at {{ bakery.name }} </h2>
+    <md-content class="md-padding centered" layout="column">
+      <h1 class="congrats-text">Awesome, you got <span class="percent">{{ selectedCard.discount }}%</span> off your next purchase at {{ bakery.name }} </h1>
 
-    <p>
-      How do I redeem this awesome reward?
-    </p>
-    <div class="col-md-4 col-xs-12 well redemption-options">
-      <h4>Option 1</h4>
-      Visit this link when you're at the bakery.<br/>
-      <a href="#">www.stealfresh.ly/voucher/12125125</a>
-    </div>
-    <div class="col-md-4 col-xs-12 well redemption-options">
-      <h4>Option 2</h4>
-      We'll send you an email<br/>
-      <form class="form-inline">
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="email">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button">Email me!</button>
-          </span>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-4 col-xs-12 well redemption-options">
-      <h4>Option 3</h4>
-      Download our app to save all your discounts <br/>
-      <a href="#">Android</a> <a href="#">iPhone</a>
-    </div>
+      <p>
+        How do I redeem this awesome reward?
+      </p>
+    </md-content>
+    <md-content class="md-padding" layout-gt-xs="row" layout="column">
+
+      <md-card flex-gt-xs layout="column">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Option 1</span>
+            <span class="md-subhead">Visit this link when you're at the bakery.</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Link</label>
+            <input ng-model="link" readonly>
+          </md-input-container>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Copy to clipboard</md-button>
+        </md-card-actions>
+      </md-card>
+
+      <md-card flex-gt-xs layout="column">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Option 2</span>
+            <span class="md-subhead">We'll send you an email</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <md-input-container class="md-block" flex-gt-xs>
+            <form name="sendEmail">
+              <label>Email</label>
+              <input required type="email" name="email" ng-model="email"
+                 minlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              <div ng-messages="sendEmail.email.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                  Invalid email
+                </div>
+              </div>
+            </form>
+          </md-input-container>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Email</md-button>
+        </md-card-actions>
+      </md-card>
+
+      <md-card flex-gt-xs layout="column">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Option 3</span>
+            <span class="md-subhead">Download our app to save all your discounts in one convenient place.</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Open in App</md-button>
+        </md-card-actions>
+      </md-card>
+    </md-content>
   </div>
+
+  <md-content class="md-padding centered" layout="column" ng-if="!revealed">
+    <h1>Score! Your friend {{friend.name}} gave you a voucher for {{ bakery.name }}</h1>
+    <p>
+      Click on one of the cards below to reveal your voucher!
+    </p>
+  </md-content>
 
   <div class="row cards" ng-class="{ revealed: revealed, obscured: !revealed }">
     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 game-card-container" ng-repeat="card in game.cards track by $index">
-      <div class="game-card-panel" ng-class="{selected: card.selected}" ng-click="selectCard(card)">
+      <div class="game-card-panel md-whiteframe-1dp" ng-class="{selected: card.selected}" ng-click="selectCard(card)">
         <span class="card-icon" ng-if="!revealed">
           <i class="fa fa-trophy" aria-hidden="true"></i>
         </span>
@@ -63,16 +98,13 @@
       </div>
     </div>
     <div class="col-xs-12" ng-if="!revealed">
-      <button class="btn btn-success money-button" ng-disabled="!cardSelected" ng-click="getVoucher()">Show me the money!</button>
+      <md-button class="md-raised md-primary money-button" ng-disabled="!cardSelected" ng-click="getVoucher()">Show me the money!</md-button>
     </div>
   </div>
 
-
 </div>
 
-<div style="height: 200px;">
-</div>
-
+<div style="height: 200px;"></div>
 
 <style>
   .cards.revealed .game-card-panel {
@@ -120,7 +152,7 @@
 
   }
   .congrats-text .percent {
-    font-size:
+
   }
 
   .redemption-options {

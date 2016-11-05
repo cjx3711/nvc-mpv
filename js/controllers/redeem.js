@@ -39,4 +39,6 @@ sweetApp.controller('redeemController', ['$scope', '$location' ,'dataService', f
     });
   }
 
+  $scope.link = "www.google.com"
+
 }]);
