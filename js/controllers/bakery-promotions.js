@@ -83,8 +83,6 @@ sweetApp.controller('bakeryPromotionsController', ['$scope', '$location' ,'dataS
     }
   }, 1000 );
 
-  console.log("Stuff");
-
 
 
 

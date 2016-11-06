@@ -49,7 +49,7 @@
               </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="promotion in promotionData">
+                <tr ng-repeat="promotion in promotions">
                     <td><span class="label" ng-class="{'label-success':promotion.fakeData.status=='active', 'label-warning':promotion.fakeData.status=='expiring', 'label-default':promotion.fakeData.status=='inactive'}">{{ promotion.fakeData.status}}</span></td>
                     <td> {{ promotion.name }} </td>
                     <td> {{ promotion.fakeData.totalSales }} </td>
