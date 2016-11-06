@@ -27,8 +27,7 @@
     </div> <!-- /container -->
 </div>
 
-<md-content class="md-padding" layout-gt-xs="row" layout="column">
-
+<md-content class="md-padding" layout-gt-xs="row" layout="column" ng-show="!posted">
   <md-card flex-gt-xs layout="column">
     <md-card-title>
       <md-card-title-text>
@@ -85,74 +84,33 @@
       </a>
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-raised" ng-class="{ 'md-primary': captured }" ng-disabled="!captured" class="md-primary" flex ng-click="post">{{ !captured ? 'Take a picture first!' : 'Upload' }}</md-button>
+      <md-button class="md-raised" ng-class="{ 'md-primary': captured }" ng-disabled="!captured" flex ng-click="post()">{{ !captured ? 'Take a picture first!' : 'Upload' }}</md-button>
     </md-card-actions>
   </md-card>
 </md-content>
 
-<div class="container mtb">
- 	<div class="row">
-    <div class="col-md-6" ng-if="posted">
-      <h4>Thank you for posting this!</h4>
+<md-content class="md-padding" layout-gt-xs="row" layout="column" ng-show="posted">
+  <md-card flex-gt-xs layout="column">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Thank you for posting this!</span>
+        <span class="md-subhead">Now we just wait for people to use your code.</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
       <p>
-        {{description}}
+        {{ description }}
       </p>
       <p>
-        You can share this link with your friends!
+        You can also share this link with your friends!
       </p>
       <input type="text" class="form-control" readonly ng-model="postLink"/>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button>Copy link to clipboard</md-button>
 
-    </div>
-    <div class="col-md-6" ng-if="!posted">
-      <div class="information" ng-if="captured">
-        <h4>Information</h4>
-        <div class="hline"></div>
-        <form role="form">
-          <div class="form-group">
-            <label for="name">Description</label>
-            <input type="text" class="form-control" id="description" ng-model="description">
-          </div>
-
-          <a class="btn btn-block btn-social btn-twitter">
-            <span class="fa fa-twitter"></span> Post to twitter <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-pinterest">
-            <span class="fa fa-pinterest"></span> Post to pinterest <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-tumblr">
-            <span class="fa fa-tumblr"></span> Post to tumblr <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-facebook">
-            <span class="fa fa-facebook"></span> Post to facebook <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-google">
-            <span class="fa fa-google"></span> Post to google+ <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-flickr">
-            <span class="fa fa-flickr"></span> Post to flickr <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <a class="btn btn-block btn-social btn-instagram">
-            <span class="fa fa-instagram"></span> Post to instagram <span class="fa fa-check pull-right"></span>
-          </a>
-
-          <button type="submit" class="btn btn-theme form-control" ng-click="post()">Post</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
+    </md-card-actions>
+  </md-card>
+</md-content>
 
 <canvas style="display:none;"></canvas>
-
-<script>
-
-</script>

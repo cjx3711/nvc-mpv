@@ -18,25 +18,54 @@
     </div> <!-- /container -->
 </div>
 
-<div class="container mtb">
- 	<div class="row">
-    <div class="col-lg-6">
-      <video class="live-stream" autoplay></video>
-      <div class="btn btn-default" onclick="scan()">
-        Scan
+<md-content class="md-padding" layout-gt-xs="row" layout="column">
+
+  <md-card flex-gt-xs layout="column">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Scan</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <video class="live-stream" autoplay></video>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-raised"
+        ng-class="{ 'md-primary': !captured }"
+        flex
+        ng-click="scan()" >
+        {{ !captured ? 'Scan code' : 'Reset' }}
+      </md-button>
+    </md-card-actions>
+  </md-card>
+
+  <md-card flex-gt-xs layout="column">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Discount Information</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <div ng-show="!scanned">
+        <p>
+          Please scan a code first
+        </p>
       </div>
-    </div>
-    <div class="col-lg-6">
-
-    </div>
-  </div>
-
-</div>
-
-
+      <div ng-show="scanned">
+        <h1>40% off all pasteries</h1>
+      </div>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-raised"
+        ng-class="{ 'md-primary': captured }"
+        ng-disabled="!captured"
+        class="md-primary"
+        flex
+        ng-click="scan()">
+        {{ !captured ? 'Please scan first' : 'Coupon used' }}
+      </md-button>
+    </md-card-actions>
+  </md-card>
+</md-content>
 
 <canvas style="display:none;"></canvas>
-
-<script>
-
-</script>

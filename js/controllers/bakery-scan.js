@@ -1,6 +1,8 @@
 sweetApp.controller('bakeryScanController', ['$scope', '$location' ,'dataService', function ($scope, $location, DataService) {
   $scope.pageTitle = "Scan voucher";
 
+  $scope.scanned = false;
+
 
   var video = document.querySelector('video');
   var canvas = document.querySelector('canvas');
@@ -11,13 +13,17 @@ sweetApp.controller('bakeryScanController', ['$scope', '$location' ,'dataService
     console.log('Reeeejected!', e);
   };
 
-  function scan() {
+  $scope.scan = function() {
     if ( video.paused ) {
       video.play();
+      $scope.scanned = false;
     } else {
       video.pause();
+      $scope.scanned = true;
     }
   }
+
+
 
   function snapshot() {
     if (localMediaStream) {
