@@ -26,6 +26,10 @@ sweetApp.config( function($routeProvider) {
         templateUrl : "templates/bakeries.html",
         controller: "bakeryController"
     })
+    .when("/nearby", {
+        templateUrl : "templates/bakeries.html",
+        controller: "bakeryController"
+    })
 
     .when("/login", {
         templateUrl : "templates/login.html",

@@ -31,10 +31,10 @@
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
       <md-button class="md-raised"
-        ng-class="{ 'md-primary': !captured }"
+        ng-class="{ 'md-primary': !scanned }"
         flex
         ng-click="scan()" >
-        {{ !captured ? 'Scan code' : 'Reset' }}
+        {{ !scanned ? 'Scan code' : 'Reset' }}
       </md-button>
     </md-card-actions>
   </md-card>
@@ -57,12 +57,12 @@
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
       <md-button class="md-raised"
-        ng-class="{ 'md-primary': captured }"
-        ng-disabled="!captured"
+        ng-class="{ 'md-primary': scanned }"
+        ng-disabled="!scanned"
         class="md-primary"
         flex
         ng-click="scan()">
-        {{ !captured ? 'Please scan first' : 'Coupon used' }}
+        {{ !scanned ? 'Please scan first' : 'Coupon used' }}
       </md-button>
     </md-card-actions>
   </md-card>

@@ -1,12 +1,117 @@
 function generateStoreData() {
-  var stores = [];
-  for ( var i = 0; i < 10; i++ ) {
-    stores.push({
-      id: i+1,
-      name: "Sweet Bakery",
-      img: "http://placehold.it/600x400",
-      location: "123 Some Street"
-    });
-  }
+  var stores =
+  [
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.2949889884722228,
+      lon: 103.85204315185548
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.304599552047222,
+      lon: 103.8604116439819
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3154113921738335,
+      lon: 103.85757923126225
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3137810383194464,
+      lon: 103.87830734252934
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.287008760656557,
+      lon: 103.8405418395996
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3065731453895093,
+      lon: 103.87762069702143
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.312751340599998,
+      lon: 103.8470649719238
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3378071972557988,
+      lon: 103.85187149047858
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3319722944135324,
+      lon: 103.84981155395504
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3182430568620136,
+      lon: 103.86938095092776
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.339180113557158,
+      lon: 103.8745307922363
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.297649058834867,
+      lon: 103.8541030883789
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.3023685316222549,
+      lon: 103.87809276580819
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.294388327036012,
+      lon: 103.8689947128295
+    },
+    {
+      name: "Super Bakery",
+      img: "http://placehold.it/300x200",
+      location: "123 Some street",
+      lat: 1.2997942748317888,
+      lon: 103.86247158050538
+    }
+  ];
+  var i = 0;
+  _.each ( stores, function (store) {
+    store.id = i;
+    i++;
+  });
+
   return stores;
 }

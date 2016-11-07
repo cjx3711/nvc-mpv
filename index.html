@@ -41,16 +41,10 @@
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#/blog">BLOG</a></li>
-                <li><a href="#/bakeries?filter=nearby">NEARBY</a></li>
-                <li><a href="#/bakeries">BAKERY LIST</a></li>
-              </ul>
-            </li>
+            <li><a href="#/bakeries">STORES</a></li>
+            <li><a href="#/nearby">NEARBY</a></li>
+            <li><a href="#/about">ABOUT</a></li>
+            <li><a href="#/contact">CONTACT</a></li>
             <li class="dropdown"
               ng-if="!DataService().user">
               <a class="dropdown-toggle" data-toggle="dropdown">LOGIN / REGISTER <b class="caret"></b></a>
@@ -138,6 +132,8 @@
     <script src="lib/js/chartist.js"></script>
     <script src="lib/js/lodash.js"></script>
     <script src="lib/js/jquery.hoverdir.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyC4CQLpbQphsxZNyerTvmo81k67TxgymuU"></script>
+    <script src="lib/gmaps.js"></script>
     <script src="lib/js/jquery.hoverex.min.js"></script>
     <script src="lib/js/jquery.prettyPhoto.js"></script>
     <script src="lib/js/jquery.isotope.min.js"></script>
