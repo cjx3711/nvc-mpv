@@ -8,32 +8,32 @@ function generateStoreData() {
       lon: 103.85204315185548
     },
     {
-      name: "Super Bakery",
-      location: "123 Some street",
+      name: "Bake it",
+      location: "321 Street Newton",
       lat: 1.304599552047222,
       lon: 103.8604116439819
     },
     {
-      name: "Super Bakery",
-      location: "123 Some street",
+      name: "French Bakery",
+      location: "12 Street 3",
       lat: 1.3154113921738335,
       lon: 103.85757923126225
     },
     {
-      name: "Super Bakery",
-      location: "123 Some street",
+      name: "L'Patisserie",
+      location: "French Street",
       lat: 1.3137810383194464,
       lon: 103.87830734252934
     },
     {
-      name: "Super Bakery",
-      location: "123 Some street",
+      name: "Cupcakes Galore",
+      location: "Some address",
       lat: 1.287008760656557,
       lon: 103.8405418395996
     },
     {
-      name: "Super Bakery",
-      location: "123 Some street",
+      name: "A new cake",
+      location: "44 Cupcake street",
       lat: 1.3065731453895093,
       lon: 103.87762069702143
     },
